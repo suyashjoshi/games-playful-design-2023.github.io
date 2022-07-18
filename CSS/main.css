@@ -1,0 +1,239 @@
+:root {
+    /* Color palette */
+    --wildberry-primary: #170027;
+    --wildberry-secondary: #350058;
+    --wildberry-secondary-alt: #F40174;
+    --wildberry-tertiary: #4c007c;
+    --wildberry-accent-color: #00ffb7;
+    --wildberry-input-box: #350058;
+    --wildberry-mention: #97004c;
+    --wildberry-red: #ff6c5c;
+    --wildberry-svg: #F40174;
+    --wildberry-less-hot: #cc0066;
+
+}
+body {
+    background: #FEEEEC;
+    font-size: 15px;
+    line-height: 1.42857143;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    /*
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    */
+}
+
+.navbar {
+    z-index: 50;
+    background-color: transparent;
+    padding: 0.75em 10em;
+    width: 100%;
+    position: fixed;
+    transition: padding 0.3s;
+    font-weight: bolder;
+}
+
+.fixed {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    padding: 0.25em 10em;
+    top: 0;
+    position: fixed;
+    transition: all 0.3s;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar ul li {
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+.navbar ul li.button {
+    position: relative;
+    width: auto;
+    margin: 0 1rem;
+    text-align: center;
+    order: 3;
+}
+
+.navbar ul li.button:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 5px;
+    height: 2px;
+    width: 100%;
+    background: white;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+
+
+
+
+.navbar ul li.logo.top {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.navbar ul li.logo {
+    flex: 1;
+    color: white;
+    font-size: clamp(1.5rem, 2.5vw, 4rem); 
+    font-weight: 600;
+    cursor: default;
+    user-select: none;
+}
+
+.navbar ul li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.navbar ul li:hover a {
+    color: white;
+    
+}
+.navbar ul li.button:hover {
+    transform: scale(1.5);
+    transition: 0.5s;
+}
+.navbar ul li.button.selected{
+    transform: scale(1.5);
+    transition: 0.5s;
+}
+.navbar ul li i {
+    font-size: 23px;
+}
+
+.navbar ul li.ham {
+    display: none;
+}
+
+.navbar ul li.ham.hide i:before {
+    content: '\f00d';
+}
+
+
+@media all and (max-width: 900px) {
+    .navbar {
+        padding: 5px 30px;
+    }
+
+    .navbar ul li.button {
+        width: 100%;
+        display: none;
+    }
+
+    .navbar ul li.button.show {
+        display: block;
+    }
+
+    .navbar ul li.ham {
+        display: block;
+    }
+
+    .navbar ul li.button:hover a{
+        opacity: 1;
+        bottom: 8px;
+        border-radius: 5px;
+
+        border-bottom: white, 2px;
+
+    }
+
+    .navbar ul li.button:hover:after {
+        opacity: 0;
+    }
+}
+
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+header,
+section {
+    padding: 4rem 0;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 clamp(2rem, 3rem + 3vw ,15rem);
+}
+.content-filler{
+    font-size:clamp(1rem,1rem + 2vw,1.2rem);
+}
+.content-filler p{
+    margin-bottom: 1rem;
+}
+.content-heading{
+    justify-content: center;
+    text-align: center;
+    font-weight: 800;
+    font-size: clamp(2rem,1rem + 1.2vw,3rem);
+    margin-top:3rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: row;
+
+    padding: 0 4px;
+}
+
+.info-container div {
+    text-align: center;
+    flex: 33%;
+    padding: 0 4px;
+    gap:2em;
+    font-size: clamp(1rem,1rem + 2vw,1.2rem);
+
+}
+@media (max-width:40em){
+    .info-container{
+        display : block;
+    }
+}
+.info-container div .heading {
+    font-weight: bold;
+    margin: auto;
+    font-weight: 600;
+    font-size: clamp(1rem,1rem + 1.2vw,1.5rem);
+
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

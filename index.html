@@ -1,1 +1,215 @@
-Test Page :3
+<html lang="en">
+
+<head>
+    <title>TIGHTROPE - MA IGPED 2022 Degree Show</title>
+    <meta name="description" content="TIGHTROPE is a showcase of work by the 2022 MA Independent Games & Playable Experience Design cohort at Goldsmiths, University of London." >
+
+
+
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+
+        <!-- Navigation Menu -->
+        <ul>
+            <li class="logo logo-animated top" id="logo">
+                <ul class="c-rainbow">
+                    <li class="c-rainbow__layer c-rainbow__layer--white">Tightrope</li>
+                    <li class="c-rainbow__layer c-rainbow__layer--orange">Tightrope</li>
+                    <li class="c-rainbow__layer c-rainbow__layer--red">Tightrope</li>
+                    <li class="c-rainbow__layer c-rainbow__layer--violet">Tightrope</li>
+                    <li class="c-rainbow__layer c-rainbow__layer--blue">Tightrope</li>
+                    <li class="c-rainbow__layer c-rainbow__layer--green">Tightrope</li>
+                    <li class="c-rainbow__layer c-rainbow__layer--yellow">Tightrope</li>
+                </ul>
+            </li>
+            <li class="button"><a href="#">About</a></li>
+            <li class="button"><a href="#">Games</a></li>
+            <li class="button"> <a href="#">Artists</a></li>
+            <li class="ham"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+
+
+    </nav>
+
+
+    <div class="banner" id="banner">
+
+        <ul class="c-rainbow">
+            <li class="c-rainbow__layer c-rainbow__layer--white">Tightrope</li>
+            <li class="c-rainbow__layer c-rainbow__layer--orange">Tightrope</li>
+            <li class="c-rainbow__layer c-rainbow__layer--red">Tightrope</li>
+            <li class="c-rainbow__layer c-rainbow__layer--violet">Tightrope</li>
+            <li class="c-rainbow__layer c-rainbow__layer--blue">Tightrope</li>
+            <li class="c-rainbow__layer c-rainbow__layer--green">Tightrope</li>
+            <li class="c-rainbow__layer c-rainbow__layer--yellow">Tightrope</li>
+        </ul>
+
+    </div>
+    <div class="container">
+        <div class="content-heading">
+            About
+        </div>
+        <div class="content-filler">
+            <p>
+                Welcome to TIGHTROPE, a showcase of work by the 2022 MA Independent Games & Playable 
+                Experience Design cohort at Goldsmiths, University of London.
+            </p>
+            <p>
+                TIGHTROPE interprets tension in play, from curiosity and uncertainty to challenge and courage, across
+                the
+                spectrum of play between rules and make-believe.
+            </p>
+            <p>
+                Through puzzle games, interactive fiction, Kinect & VR experiences, and role play, we explore what it
+                means
+                to walk metaphorical tightropes - noticing, feeling, learning, trusting, wandering, being.
+            </p>
+            <p>
+                In this weekend of play, we invite you to walk with us, to leave the door open for the unknown, to see
+                the
+                value of tension in creating new conversations.
+            </p>
+        </div>
+        <div class="content-heading">
+            Info
+        </div>
+        <div class="info-container">
+            <div>
+                <div class="heading">
+                    Venue
+                </div>
+
+                <br>
+                St. James Hatcham Church
+                <br>
+                Goldsmiths University, New Cross
+                <br>
+                London SE14 6AD
+            </div>
+            <div>
+                <div class="heading">
+                    Timings
+                </div>
+
+                9-11 September 2022
+                <br>
+                Friday 18:00-22:00 - opening
+                <br>
+                Saturday 10:00-18:00
+                <br>
+                Sunday 11:00-17:00
+
+            </div>
+
+            <div>
+                <a href="#" class="ticket-button">Tickets</a>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="content-heading">
+            Games
+        </div>
+
+        <div class="games-container">
+            <div>
+                game 1 - modal
+            </div>
+            <div>
+                game2 - modal
+            </div>
+            <div>
+                game3 - modal
+            </div>
+            <div>
+                game4 - modal
+            </div>
+            <div>
+                game5 - modal
+
+
+                (5 in a row)
+            </div>
+        </div>
+
+
+
+
+        <div class="content-heading">
+            Artists
+        </div>
+        <div class="artist-container">
+            <div>
+                artist 1
+            </div>
+            <div>
+                artist 2
+            </div>
+            <div>
+                artist 3
+
+
+                (3 in a row)
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        copyright bla bla
+    </footer>
+</body>
+<script>
+        $(document).ready(function () {
+        $('.ham').click(function () {
+            $('.button').toggleClass("show");
+            $('ul li').toggleClass("hide");
+        });
+    });
+
+
+    $.fn.isInViewport = function (offsetElement) {
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop+ $(this).outerHeight();
+
+        var viewportTop = $(window).scrollTop()+$("#navbar").outerHeight();
+        var viewportBottom = viewportTop + $(window).height();
+
+        return elementBottom > viewportTop && elementTop < viewportBottom;
+    };
+
+    $(document).scroll(function () {
+
+
+        if ($("#banner").isInViewport()) {
+            $("#navbar").removeClass("fixed");
+            $("#logo").addClass("top");
+
+        } else if(!$("#banner").isInViewport()){
+            $("#navbar").addClass("fixed");
+            $("#logo").removeClass("top");
+        }
+    });
+</script>
+
+</html>
