@@ -26,6 +26,7 @@ let charaters = ["T", "I", "G", "H", "T", "R", "O", "P", "E"];
 let count = 9;
 let pluckers = [];
 let pitch = (isMobile.any())? 90 : 60;
+let cHeight;
 
 
 
@@ -44,6 +45,8 @@ function setup() {
     createCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight).parent(canvasParent);
     setupPluckers();
     textFont("Impact");
+    
+    cHeight = canvasParent.offsetHeight;
 }
 function setupPluckers() {
     angleMode(DEGREES);
@@ -104,7 +107,7 @@ class Plucker {
         let unitLength = (isMobile.any())? 90 : 4;
 
         //Draw the line(s)
-        for (let y = 0; y < height; y += unitLength) {
+        for (let y = 0; y < cHeight; y += unitLength) {
             let x = this.x + this.wamp * sin(steps * y);
             line(x, y, lastx, lasty);
             lastx = x;
