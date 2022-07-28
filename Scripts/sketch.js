@@ -5,10 +5,11 @@ let charaters = ["T", "I", "G", "H", "T", "R", "O", "P", "E"];
 let count = 9;
 let pluckers = [];
 
-let ratio_responsive = 200 / 1500;
+
 
 
 function setup() {
+    pixelDensity(1);
     let canvasParent = document.getElementById('banner');
     let cvs_width = canvasParent.offsetWidth;
     createCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight).parent(canvasParent);
@@ -25,6 +26,12 @@ function setupPluckers() {
 function windowResized() {
     let canvasParent = document.getElementById('banner');
     resizeCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight);
+    for (let p of pluckers) {
+        p.show();
+        if (((pmouseX < p.x && mouseX > p.x) || (pmouseX > p.x && mouseX < p.x))) {
+            p.wamp = width / 60;
+        }
+    }
 
 }
 function draw() {
@@ -50,6 +57,7 @@ class Plucker {
     show() {
         let canvasParent = document.getElementById('banner');
         let cvs_width = canvasParent.offsetWidth;
+        let ratio_responsive = 150 / 1500;
 
         stroke(246 - 3 * this.wamp, 194 - 3 * this.wamp, 244 - 3 * this.wamp);
         strokeWeight(2);																							//String weight
@@ -84,5 +92,8 @@ class Plucker {
         } else {
             this.damp *= 0.97;   																					//Falloff rate
         }
+    }
+    clear(){
+
     }
 }
