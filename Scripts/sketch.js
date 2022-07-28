@@ -33,8 +33,13 @@ function draw() {
     background('#01006C');
     for (let p of pluckers) {
         p.show();
+
         if (((pmouseX < p.x && mouseX > p.x) || (pmouseX > p.x && mouseX < p.x))) {
-            p.wamp = width / 60;
+
+            if(mouseY>=0 && mouseY <= height){
+                p.wamp=width/60;
+            }
+            
         }
     }
 }
