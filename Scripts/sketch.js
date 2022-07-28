@@ -25,7 +25,7 @@ var isMobile = {
 let charaters = ["T", "I", "G", "H", "T", "R", "O", "P", "E"];
 let count = 9;
 let pluckers = [];
-let pitch = (isMobile.any())? width / 90 : width / 60;
+let pitch = (isMobile.any())? 90 : 60;
 
 
 
@@ -65,7 +65,7 @@ function draw() {
         //if( !isMobile.any() ){
             if (mouseY >= 0 && mouseY <= height) {
                 if (((pmouseX < p.x && mouseX > p.x) || (pmouseX > p.x && mouseX < p.x))) {
-                    p.wamp = width / 60;
+                    p.wamp = width / pitch;
                 }
     
             }
