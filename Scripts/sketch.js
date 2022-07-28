@@ -27,6 +27,7 @@ let count = 9;
 let pluckers = [];
 let pitch = (isMobile.any())? 90 : 60;
 let cHeight;
+let cWidth;
 
 
 
@@ -47,6 +48,7 @@ function setup() {
     textFont("Impact");
     
     cHeight = canvasParent.offsetHeight;
+    cWidth = canvasParent.offsetWidth;
 }
 function setupPluckers() {
     angleMode(DEGREES);
@@ -112,6 +114,9 @@ class Plucker {
             line(x, y, lastx, lasty);
             lastx = x;
             lasty = y;
+            if(y < cHeight && y + unitLength >= cHeight){
+                line(this.x, cHeight, lastx, lasty);
+            }
         }
 
         //Draw the word
