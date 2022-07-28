@@ -26,13 +26,8 @@ function setupPluckers() {
 function windowResized() {
     let canvasParent = document.getElementById('banner');
     resizeCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight);
-    for (let p of pluckers) {
-        p.show();
-        if (((pmouseX < p.x && mouseX > p.x) || (pmouseX > p.x && mouseX < p.x))) {
-            p.wamp = width / 60;
-        }
-    }
-
+    pluckers.length=0;
+    setupPluckers();
 }
 function draw() {
     background('#01006C');
@@ -58,8 +53,8 @@ class Plucker {
         let canvasParent = document.getElementById('banner');
         let cvs_width = canvasParent.offsetWidth;
         let ratio_responsive = 150 / 1500;
-
-        stroke(246 - 3 * this.wamp, 194 - 3 * this.wamp, 244 - 3 * this.wamp);
+        let weight_ratio = 150/15000;
+        stroke(246 - 0.7 * this.wamp, 194 - 0.7 * this.wamp, 244 - 0.7 * this.wamp);
         strokeWeight(2);																							//String weight
         this.wamp += this.damp;
         this.damp -= this.wamp;
@@ -80,9 +75,9 @@ class Plucker {
         rectMode(CENTER);
         textAlign(CENTER);
         fill('#01006C');
-        strokeWeight(6);	        //Test weight
+        let text_weight = cvs_width * weight_ratio;
+        strokeWeight(text_weight);	        //Test weight
         let text_size = cvs_width * ratio_responsive;									//responsive text size												
-
         textSize(text_size);																									//Text size
         text(this.chara, this.x, height / 2);
         pop();
@@ -92,8 +87,5 @@ class Plucker {
         } else {
             this.damp *= 0.97;   																					//Falloff rate
         }
-    }
-    clear(){
-
     }
 }
