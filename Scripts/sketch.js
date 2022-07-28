@@ -98,9 +98,10 @@ class Plucker {
         let lastx = this.x;
         let lasty = 0;
         let steps = this.nodes * 180 / height;
+        let unitLength = (isMobile.any())? 4 : 20;
 
         //Draw the line(s)
-        for (let y = 0; y < height; y += 4) {
+        for (let y = 0; y < height; y += unitLength) {
             let x = this.x + this.wamp * sin(steps * y);
             line(x, y, lastx, lasty);
             lastx = x;
