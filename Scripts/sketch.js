@@ -25,6 +25,7 @@ var isMobile = {
 let charaters = ["T", "I", "G", "H", "T", "R", "O", "P", "E"];
 let count = 9;
 let pluckers = [];
+let pitch = (isMobile.any())? width / 90 : width / 60;
 
 
 
@@ -100,7 +101,7 @@ class Plucker {
         let lastx = this.x;
         let lasty = 0;
         let steps = this.nodes * 180 / height;
-        let unitLength = (isMobile.any())? 80 : 4;
+        let unitLength = (isMobile.any())? 90 : 4;
 
         //Draw the line(s)
         for (let y = 0; y < height; y += unitLength) {
