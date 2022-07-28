@@ -32,7 +32,7 @@ let pluckers = [];
 function setup() {
     pixelDensity(1);
     if(isMobile.any()){
-        frameRate(20);
+        frameRate(60);
     }else{
         frameRate(60);
     }
