@@ -26,20 +26,18 @@ function setupPluckers() {
 function windowResized() {
     let canvasParent = document.getElementById('banner');
     resizeCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight);
-    pluckers.length=0;
+    pluckers.length = 0;
     setupPluckers();
 }
 function draw() {
     background('#01006C');
     for (let p of pluckers) {
         p.show();
-
-        if (((pmouseX < p.x && mouseX > p.x) || (pmouseX > p.x && mouseX < p.x))) {
-
-            if(mouseY>=0 && mouseY <= height){
-                p.wamp=width/60;
+        if (mouseY >= 0 && mouseY <= height) {
+            if (((pmouseX < p.x && mouseX > p.x) || (pmouseX > p.x && mouseX < p.x))) {
+                p.wamp = width / 60;
             }
-            
+
         }
     }
 }
@@ -55,10 +53,15 @@ class Plucker {
         this.nodes = nodes;
     }
     show() {
+
+
         let canvasParent = document.getElementById('banner');
         let cvs_width = canvasParent.offsetWidth;
         let ratio_responsive = 150 / 1500;
-        let weight_ratio = 150/15000;
+        let weight_ratio = 125 / 15000;
+
+
+
         stroke(246 - 0.7 * this.wamp, 194 - 0.7 * this.wamp, 244 - 0.7 * this.wamp);
         strokeWeight(2);																							//String weight
         this.wamp += this.damp;
@@ -80,10 +83,13 @@ class Plucker {
         rectMode(CENTER);
         textAlign(CENTER);
         fill('#01006C');
+
         let text_weight = cvs_width * weight_ratio;
         strokeWeight(text_weight);	        //Test weight
+        
         let text_size = cvs_width * ratio_responsive;									//responsive text size												
         textSize(text_size);																									//Text size
+
         text(this.chara, this.x, height / 2);
         pop();
 
