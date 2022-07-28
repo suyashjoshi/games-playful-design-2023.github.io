@@ -31,11 +31,13 @@ let pluckers = [];
 
 function setup() {
     pixelDensity(1);
+    /*
     if(isMobile.any()){
         frameRate(60);
     }else{
         frameRate(60);
     }
+    */
     let canvasParent = document.getElementById('banner');
     let cvs_width = canvasParent.offsetWidth;
     createCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight).parent(canvasParent);
