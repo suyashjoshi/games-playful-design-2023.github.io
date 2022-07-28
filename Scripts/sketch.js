@@ -59,14 +59,14 @@ function draw() {
     background('#01006C');
     for (let p of pluckers) {
         p.show();
-        if( !isMobile.any() ){
+        //if( !isMobile.any() ){
             if (mouseY >= 0 && mouseY <= height) {
                 if (((pmouseX < p.x && mouseX > p.x) || (pmouseX > p.x && mouseX < p.x))) {
                     p.wamp = width / 60;
                 }
     
             }
-        }
+        //}
       
     }
 }
@@ -98,7 +98,7 @@ class Plucker {
         let lastx = this.x;
         let lasty = 0;
         let steps = this.nodes * 180 / height;
-        let unitLength = (isMobile.any())? 4 : 20;
+        let unitLength = (isMobile.any())? 80 : 4;
 
         //Draw the line(s)
         for (let y = 0; y < height; y += unitLength) {
@@ -124,7 +124,7 @@ class Plucker {
         pop();
 
         if (Math.abs(this.wamp) + Math.abs(this.damp) < width / 500) {
-            this.wamp = 0;												  //Random vibration
+            this.wamp = width/random(120, 220);													  //Random vibration
         } else {
             this.damp *= 0.97;   																					//Falloff rate
         }
