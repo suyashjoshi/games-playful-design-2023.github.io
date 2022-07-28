@@ -1,4 +1,25 @@
 
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
 
 
 let charaters = ["T", "I", "G", "H", "T", "R", "O", "P", "E"];
@@ -33,12 +54,15 @@ function draw() {
     background('#01006C');
     for (let p of pluckers) {
         p.show();
-        if (mouseY >= 0 && mouseY <= height) {
-            if (((pmouseX < p.x && mouseX > p.x) || (pmouseX > p.x && mouseX < p.x))) {
-                p.wamp = width / 60;
+        if( !isMobile.any() ){
+            if (mouseY >= 0 && mouseY <= height) {
+                if (((pmouseX < p.x && mouseX > p.x) || (pmouseX > p.x && mouseX < p.x))) {
+                    p.wamp = width / 60;
+                }
+    
             }
-
         }
+      
     }
 }
 
