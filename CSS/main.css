@@ -71,9 +71,12 @@ body {
 }
 
 .fixed {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: #01006C;
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+   /* 
+   animation: gradient 15s ease infinite; 
+   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+   */
     padding: 0.25em 10em;
     top: 0;
     position: fixed;
@@ -126,11 +129,21 @@ body {
     flex: 1;
     color: white;
     font-size: clamp(1.5rem, 2.5vw, 4rem);
-    font-weight: 600;
     cursor: default;
     user-select: none;
 }
-
+.navbar ul li.logo .text{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #01006C;
+    letter-spacing: 0.5rem;
+    text-shadow:
+    3px 3px 0 #fcd1fa,
+  -1px -1px 0 #fcd1fa,  
+   1px -1px 0 #fcd1fa,
+   -1px 1px 0 #fcd1fa,
+    1px 1px 0 #fcd1fa;
+    
+}
 .navbar ul li a {
     color: white;
     font-size: 18px;
@@ -144,6 +157,10 @@ body {
 }
 
 .navbar ul li.button:hover {
+    transform: scale(1.5);
+    transition: 0.5s;
+}
+.navbar ul li.button.active{
     transform: scale(1.5);
     transition: 0.5s;
 }
@@ -302,7 +319,7 @@ section {
     
 }
 
-.games-img {}
+
 
 .games-caption {
     padding: 2em;

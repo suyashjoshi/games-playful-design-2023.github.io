@@ -1,0 +1,88 @@
+
+
+
+let charaters = ["T", "I", "G", "H", "T", "R", "O", "P", "E"];
+let count = 9;
+let pluckers = [];
+
+let ratio_responsive = 200 / 1500;
+
+
+function setup() {
+    let canvasParent = document.getElementById('banner');
+    let cvs_width = canvasParent.offsetWidth;
+    createCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight).parent(canvasParent);
+    setupPluckers();
+    textFont("Impact");
+}
+function setupPluckers() {
+    angleMode(DEGREES);
+    for (let i = 1; i <= count; i++) {
+        let x = -width / (count * 2) + (i * width / count);
+        pluckers.push(new Plucker(x, i, Math.ceil(i / 2)));
+    }
+}
+function windowResized() {
+    let canvasParent = document.getElementById('banner');
+    resizeCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight);
+
+}
+function draw() {
+    background('#01006C');
+    for (let p of pluckers) {
+        p.show();
+        if (((pmouseX < p.x && mouseX > p.x) || (pmouseX > p.x && mouseX < p.x))) {
+            p.wamp = width / 60;
+        }
+    }
+}
+
+
+class Plucker {
+    constructor(x, id, nodes) {
+        this.x = x;
+        this.id = id;
+        this.chara = charaters[this.id - 1];
+        this.wamp = width / random(120, 180);															//Startup vibration
+        this.damp = 0;
+        this.nodes = nodes;
+    }
+    show() {
+        let canvasParent = document.getElementById('banner');
+        let cvs_width = canvasParent.offsetWidth;
+
+        stroke(246 - 3 * this.wamp, 194 - 3 * this.wamp, 244 - 3 * this.wamp);
+        strokeWeight(2);																							//String weight
+        this.wamp += this.damp;
+        this.damp -= this.wamp;
+        let lastx = this.x;
+        let lasty = 0;
+        let steps = this.nodes * 180 / height;
+
+        //Draw the line(s)
+        for (let y = 0; y < height; y += 4) {
+            let x = this.x + this.wamp * sin(steps * y);
+            line(x, y, lastx, lasty);
+            lastx = x;
+            lasty = y;
+        }
+
+        //Draw the word
+        push();
+        rectMode(CENTER);
+        textAlign(CENTER);
+        fill('#01006C');
+        strokeWeight(6);	        //Test weight
+        let text_size = cvs_width * ratio_responsive;									//responsive text size												
+
+        textSize(text_size);																									//Text size
+        text(this.chara, this.x, height / 2);
+        pop();
+
+        if (Math.abs(this.wamp) + Math.abs(this.damp) < width / 500) {
+            this.wamp = 0;												  //Random vibration
+        } else {
+            this.damp *= 0.97;   																					//Falloff rate
+        }
+    }
+}
