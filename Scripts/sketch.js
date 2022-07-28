@@ -33,6 +33,8 @@ function setup() {
     pixelDensity(1);
     if(isMobile.any()){
         frameRate(20);
+    }else{
+        frameRate(60);
     }
     let canvasParent = document.getElementById('banner');
     let cvs_width = canvasParent.offsetWidth;
