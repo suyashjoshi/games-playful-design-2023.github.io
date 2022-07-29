@@ -45,7 +45,6 @@ function setup() {
     }
     */
     let canvasParent = document.getElementById('banner');
-    let cvs_width = canvasParent.offsetWidth;
     createCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight).parent(canvasParent);
     setupPluckers();
     textFont(myFont);
@@ -54,6 +53,8 @@ function setup() {
     cWidth = canvasParent.offsetWidth;
 }
 function setupPluckers() {
+    let canvasParent = document.getElementById('banner');
+    cHeight = canvasParent.offsetHeight;
     angleMode(DEGREES);
     for (let i = 1; i <= count; i++) {
         let x = -width / (count * 2) + (i * width / count);
@@ -109,10 +110,10 @@ class Plucker {
         let lastx = this.x;
         let lasty = 0;
         let steps = this.nodes * 180 / height;
-        let unitLength = (isMobile.any())? 90 : 4;
+        let unitLength = (isMobile.any())? 70 : 4;
 
         //Draw the line(s)
-        for (let y = 0; y < cHeight; y += unitLength) {
+        for (let y = 0; lasty <= cHeight; y += unitLength) {
             let x = this.x + this.wamp * sin(steps * y);
             line(x, y, lastx, lasty);
             lastx = x;
@@ -121,6 +122,7 @@ class Plucker {
                 line(this.x, cHeight, lastx, lasty);
             }
         }
+
 
         //Draw the word
         push();
