@@ -286,7 +286,12 @@ section {
 
 }
 .info-container div .heading img{
-    max-width: 65%;
+    max-width: 90%;
+}
+@media (min-width:100em) {
+    .info-container div .heading img{
+        max-width: 65%;
+    }
 }
 .ticket{
     padding:5rem 0;
