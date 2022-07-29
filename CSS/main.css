@@ -286,7 +286,15 @@ section {
 
 }
 .info-container div .heading img{
-    max-width: 75%;
+    max-width: 65%;
+}
+.ticket{
+    padding:5rem 0;
+}
+img.ticket{
+    max-width: 40%;
+    margin: 0;
+
 }
 @media (max-width:40em) {
     .info-container {
@@ -298,6 +306,10 @@ section {
     }
     .info-container div .heading img{
         max-width: 60%;
+    }
+    .ticket img{
+        max-width: 60%;
+        margin: 0 auto;
     }
 }
 
@@ -431,6 +443,10 @@ footer {
     background-color: white;
     width: 100%;
     margin-top: 5rem;
+}
+
+footer span{
+    font-size: clamp(0.3rem, 0.2rem + 0.5vw, 1rem);
 }
 
 @media (max-width:56em) {
