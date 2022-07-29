@@ -32,7 +32,7 @@ let cWidth;
 let myFont;
 
 function preload(){
-    myFont = loadFont('Assets/impact.ttf');
+    myFont = loadFont("Assets/impact.ttf");
 }
 
 function setup() {
