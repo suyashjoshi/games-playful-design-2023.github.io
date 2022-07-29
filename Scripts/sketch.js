@@ -29,8 +29,11 @@ let pitch = (isMobile.any())? 90 : 60;
 let cHeight;
 let cWidth;
 
+let myFont;
 
-
+function preload(){
+    myFont = loadFont('Assets/impact.ttf');
+}
 
 function setup() {
     pixelDensity(1);
@@ -45,7 +48,7 @@ function setup() {
     let cvs_width = canvasParent.offsetWidth;
     createCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight).parent(canvasParent);
     setupPluckers();
-    textFont("Impact");
+    textFont(myFont);
     
     cHeight = canvasParent.offsetHeight;
     cWidth = canvasParent.offsetWidth;
