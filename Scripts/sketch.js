@@ -31,9 +31,6 @@ let cWidth;
 
 let myFont;
 
-let canvasParent;
-let cvs_width;
-
 function preload(){
     myFont = loadFont("Assets/impact.ttf");
 }
@@ -47,9 +44,7 @@ function setup() {
         frameRate(60);
     }
     */
-    canvasParent = document.getElementById('banner');
-    cvs_width = canvasParent.offsetWidth;
-    
+    let canvasParent = document.getElementById('banner');
     createCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight).parent(canvasParent);
     setupPluckers();
     textFont(myFont);
@@ -58,7 +53,7 @@ function setup() {
     cWidth = canvasParent.offsetWidth;
 }
 function setupPluckers() {
-    //let canvasParent = document.getElementById('banner');
+    let canvasParent = document.getElementById('banner');
     cHeight = canvasParent.offsetHeight;
     angleMode(DEGREES);
     for (let i = 1; i <= count; i++) {
@@ -67,7 +62,7 @@ function setupPluckers() {
     }
 }
 function windowResized() {
-    //let canvasParent = document.getElementById('banner');
+    let canvasParent = document.getElementById('banner');
     resizeCanvas(canvasParent.offsetWidth, canvasParent.offsetHeight);
     pluckers.length = 0;
     setupPluckers();
@@ -86,32 +81,6 @@ function draw() {
         //}
       
     }
-    
-    push();
-    
-    rectMode(CENTER);
-    textAlign(CENTER);
-    strokeWeight
-    
-    fill(250, 220, 250);
-    stroke(246, 194, 244);
-    
-    let ratio_responsive = 150 / 10000;
-    let weight_ratio = 125 / 2500000;
-
-    let text_weight = cvs_width * weight_ratio;
-    strokeWeight(text_weight);	        //Test weight
-        
-    let text_size = cvs_width * ratio_responsive;									//responsive text size												
-    textSize(text_size);																									//Text size
-    
-    let location_offset = 60;
-
-    text("We are looking for advices !", width/2, height/2+location_offset);
-    text("We are looking for job opportunity !", width/2, height/2+location_offset+text_size);
-    text("We are looking for Players !", width/2, height/2+location_offset+text_size*2);
-        
-    pop();
 }
 
 
@@ -127,8 +96,8 @@ class Plucker {
     show() {
 
 
-        //let canvasParent = document.getElementById('banner');
-        //let cvs_width = canvasParent.offsetWidth;
+        let canvasParent = document.getElementById('banner');
+        let cvs_width = canvasParent.offsetWidth;
         let ratio_responsive = 150 / 1500;
         let weight_ratio = 125 / 15000;
 
