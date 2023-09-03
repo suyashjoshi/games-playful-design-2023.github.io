@@ -1,5 +1,5 @@
 :root {
-    --color-background: #31037D;
+    --color-background: #E35F12;
     --axis-x: 1px;
     --axis-y: 1rem;
     --delay: 10;
@@ -17,7 +17,7 @@
   
 
   .banner {   
-    background: #01006C;
+    background: #E35F12;
     font-size: 10vw;
     
     /*
