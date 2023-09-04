@@ -29,7 +29,7 @@ let soundEffect;
 function preload(){
     font = loadFont("Assets/impact.ttf");
     soundFormats('mp3', 'ogg');
-    soundEffect = loadSound('Assets/explosion.mp3');
+    soundEffect = loadSound('Assets/siguiente.mp3');
 }
 
 function setup() {
@@ -90,6 +90,7 @@ function draw() {
 function mousePressed() {
   this.p = new ParticleSystem(createVector(mouseX, mouseY));
   systems.push(p);
+  soundEffect.play();
 }
 
 // A simple Particle class
