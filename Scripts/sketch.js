@@ -24,9 +24,12 @@ let font;
 let points = [];
 let startingPoints;
 let systems;
+let soundEffect;
 
 function preload(){
     font = loadFont("Assets/impact.ttf");
+    soundFormats('mp3', 'ogg');
+    soundEffect = loadSound('Assets/explosion.mp3');
 }
 
 function setup() {
